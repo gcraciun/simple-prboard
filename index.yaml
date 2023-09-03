@@ -1,0 +1,18 @@
+apiVersion: v1
+entries:
+  simple-prboard:
+  - apiVersion: v2
+    appVersion: 0.0.1
+    created: "2023-09-03T12:52:07.468260314Z"
+    description: A simple webapp showing some information about the Github repositories
+      you want.
+    digest: c21535ef93b43f4b316cbd2e33719a76d3f09b864f31be4b97fe345fe4f406c8
+    maintainers:
+    - email: en.gcraciun@gmail.com
+      name: gcraciun
+    name: simple-prboard
+    type: application
+    urls:
+    - https://github.com/gcraciun/simple-prboard/releases/download/simple-prboard-0.1.1/simple-prboard-0.1.1.tgz
+    version: 0.1.1
+generated: "2023-09-03T12:52:07.468265614Z"
