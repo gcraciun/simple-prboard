@@ -1,0 +1,9 @@
+apiVersion: v2
+name: simple-prboard
+description: A simple webapp showing some information about the Github repositories you want.
+type: application
+version: 0.1.0
+appVersion: 0.0.0
+maintainers:
+  - name: gcraciun
+    email: en.gcraciun@gmail.com

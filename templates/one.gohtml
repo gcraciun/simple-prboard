@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple PullRequest Board</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<h1>Github PR Dashboard</h1>
+
+<div class="table-wrapper">
+    <p class="date-time">{{.CurrentDateTime}}</p>
+    <table>
+        <thead>
+            <tr>
+                <th>Repo Name</th>
+                <th>Url</th>
+                <th>Ssh Url</th>
+                <th>Private Repo</th>
+                <th>Open PRs</th>
+                <th>Closed PRs</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{range $category, $repos := .Repos}}
+            <tr><td colspan="6" style="background-color: #e7e7e7; font-weight: bold;">{{$category}}</td></tr>
+            {{range $repos}}
+            <tr{{if not .IsPrivate}} class="public-repo"{{end}}>
+                <td>{{.Name}}</td>
+                <td><a href="{{.URL}}" target="_blank" rel="noopener noreferrer">{{.URL}}</a></td>
+                <td>{{.SshUrl}}</td>
+                <td>{{if .IsPrivate}}Yes{{else}}No{{end}}</td>
+                <td><a href="{{.URL}}/pulls" target="_blank" rel="noopener noreferrer">{{.OpenPRs}}</a></td>
+                <td>{{.ClosedPRs}}</td>
+            </tr>
+            {{end}}
+            {{end}}
+        </tbody>
+    </table>
+</div>
+
+</body>
+</html>
+
